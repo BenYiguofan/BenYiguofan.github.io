@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
     <meta charset="utf-8">
     <title>title</title>
     <link rel="stylesheet" href="style.css">
@@ -11,13 +13,22 @@
   <style>
 
   body {
-    background-color: green;
-  }
+       background: linear-gradient(132deg, #2db92d, #051505 );
+       background-size: 400% 400%;
+       animation: BackgroundGradient 30s ease infinite;
+      }
+
+      @keyframes BackgroundGradient {
+        0% {background-position: 0%  50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+      }
 
 
   .what2 {
     width:700px;
     transform: translateX(10%) translateY(-20%);
+    
   }
 
   .what3 {
@@ -46,7 +57,7 @@ div.cool {
   left: 33%;
   top: 7%;
   transform: translateX(13%) translateY(20%);
-  font-family: Open Sans, sans-serif;
+  font-family: 'Audiowide', cursive;
   color: #fff;
   font-weight: 400;
   text-transform: lowercase;
@@ -64,7 +75,7 @@ div.cool2 {
   left: 33%;
   top: 100%;
   transform: translateX(-75%) translateY(25%);
-  font-family: Open Sans, sans-serif;
+  font-family: 'Audiowide', cursive;
   color: #fff;
   font-weight: 400;
   text-transform: lowercase;
@@ -82,7 +93,7 @@ div.cool3 {
   left: 33%;
   top: 100%;
   transform: translateX(-31.5%) translateY(278%);
-  font-family: Open Sans, sans-serif;
+  font-family: 'Audiowide', cursive;
   color: #fff;
   font-weight: 400;
   text-transform: lowercase;

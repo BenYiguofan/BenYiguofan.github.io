@@ -1,0 +1,46 @@
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  height:100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+h1{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+li{
+  height: 200px;
+  width: 150px;
+  background-color: hotpink;
+  float: left;
+  margin-left: 10px;
+  font-size: 60px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  border-radius: 30px;
+  transition: transform 200ms;
+}
+
+a:link, a:visited{
+  text-decoration: none;
+  color:white;
+}
+
+li:hover{
+  color: black;
+  transform: scale(1.25);
+
+}

@@ -1,0 +1,16 @@
+body{
+  background-color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  height:100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.v{
+  color: white;
+  font-size: 5em;
+}

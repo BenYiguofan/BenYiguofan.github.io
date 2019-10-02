@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+}
+
+h1{
+  margin: 0;
+  padding: 0;
+  color: red;
+  font-size: 16em;
+}
+
+h1 span{
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  animation: animate 2s linear infinite;
+
+}
+
+@keyframes animate{
+  0%
+  {
+    color: #fff;
+    filter: blur(2px);
+  }
+  5%,95%
+  {
+    color: #111;
+    filter: blur(0px);
+  }
+}
+
+
+
+
+.b{
+  font-size: 1em;
+  color:Red;
+  padding:100px;
+}
+
+.b1{
+  font-size: 1em;
+  color:white;
+}

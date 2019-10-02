@@ -1,0 +1,42 @@
+/* this defines the helper grid */
+.gridlines {
+  /* change these as you need */
+  --grid-size:50px;
+  --grid-color:pink;
+}
+
+/* anything else you want to do 👇 */
+
+
+h1 {
+  color:blue;
+}
+
+.one{
+  font-size:1.2px;
+  background-color:black;
+  color:white;
+  padding:19px;
+}
+
+.what2 {
+  width: 100%;
+}
+.span1{
+  font-size:25px;
+  color:red;
+}
+
+.span2{
+  font-size:15px;
+  
+  padding:45px;
+  font-weight:1000
+}
+
+.two{
+  font-size:1.2px;
+  background-color:black;
+  color:white;
+  padding:17px;
+}

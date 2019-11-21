@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yi Fan Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		.pushbutton {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton.clicked {
+			background: #F568FF;
+		}
+
+		.pushbutton2 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton2:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton2.clicked {
+			background: #FFA6A7;
+		}
+
+		.pushbutton3 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton3:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton3.clicked {
+			background: #A680FE;
+		}
+
+		.pushbutton4 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton4:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton4.clicked {
+			background: #FFDA99;
+		}
+
+		.pushbutton5 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton5:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton5.clicked {
+			background: #769FFF;
+		}
+
+		.pushbutton6 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton6:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton6.clicked {
+			background: #E8B98B;
+		}
+
+    .pushbutton7 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton7:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton7.clicked {
+			background: #7FF4FF;
+		}
+
+		.pushbutton8 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton8:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton8.clicked {
+			background: #DDFF99;
+		}
+
+		.pushbutton9 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton9:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton9.clicked {
+			background: #7DFFC4;
+		}
+
+		.pushbutton10 {
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			cursor: pointer;
+			margin: 10px;
+			float:left;
+		}
+		.pushbutton10:hover {
+			background: white;
+			transition: background 0.2s ease-in;
+		}
+		.pushbutton10.clicked {
+			background: #4A61EB;
+		}
+
+
+				.pushbutton11 {
+					width: 100px;
+					height: 100px;
+					background: black;
+					border-radius: 10%;
+					cursor: pointer;
+					margin: 10px;
+					float:left;
+				}
+				.pushbutton11:hover {
+					background: white;
+					transition: background 0.2s ease-in;
+				}
+				.pushbutton11.clicked {
+					background: #FFEF80;
+				}
+
+
+						.pushbutton12 {
+							width: 100px;
+							height: 100px;
+							background: black;
+							border-radius: 10%;
+							cursor: pointer;
+							margin: 10px;
+							float:left;
+						}
+						.pushbutton12:hover {
+							background: white;
+							transition: background 0.2s ease-in;
+						}
+						.pushbutton12.clicked {
+							background: #E8A28E;
+						}
+
+
+						.pushbutton13 {
+							width: 100px;
+							height: 100px;
+							background: black;
+							border-radius: 10%;
+							cursor: pointer;
+							margin: 10px;
+							float:left;
+						}
+						.pushbutton13:hover {
+							background: white;
+							transition: background 0.2s ease-in;
+						}
+						.pushbutton13.clicked {
+							background: #BFA8FF;
+						}
+
+
+						.pushbutton14 {
+							width: 100px;
+							height: 100px;
+							background: black;
+							border-radius: 10%;
+							cursor: pointer;
+							margin: 10px;
+							float:left;
+						}
+						.pushbutton14:hover {
+							background: white;
+							transition: background 0.2s ease-in;
+						}
+						.pushbutton14.clicked {
+							background: #F16184;
+						}
+
+
+						.pushbutton15 {
+							width: 100px;
+							height: 100px;
+							background: black;
+							border-radius: 10%;
+							cursor: pointer;
+							margin: 10px;
+							float:left;
+						}
+						.pushbutton15:hover {
+							background: white;
+							transition: background 0.2s ease-in;
+						}
+						.pushbutton15.clicked {
+							background: #4BD2EB;
+						}
+
+
+
+												.pushbutton16 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton16:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton16.clicked {
+													background: #FE4563;
+												}
+
+												.pushbutton17 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton17:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton17.clicked {
+													background: #F53F02;
+												}
+
+												.pushbutton18 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton18:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton18.clicked {
+													background: #F6FF0F;
+												}
+
+												.pushbutton19 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton19:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton19.clicked {
+													background: #F24C11;
+												}
+
+												.pushbutton20 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton20:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton20.clicked {
+													background: #FBEEFF;
+												}
+
+												.pushbutton21 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton21:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton21.clicked {
+													background: #F5E756;
+												}
+
+												.pushbutton22 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton22:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton22.clicked {
+													background: #F2A4F5;
+												}
+
+												.pushbutton23 {
+													width: 100px;
+													height: 100px;
+													background: black;
+													border-radius: 10%;
+													cursor: pointer;
+													margin: 10px;
+													float:left;
+												}
+												.pushbutton23:hover {
+													background: white;
+													transition: background 0.2s ease-in;
+												}
+												.pushbutton23.clicked {
+													background: #BEF5A6;
+												}
+
+
+																								.pushbutton24 {
+																									width: 100px;
+																									height: 100px;
+																									background: black;
+																									border-radius: 10%;
+																									cursor: pointer;
+																									margin: 10px;
+																									float:left;
+																								}
+																								.pushbutton24:hover {
+																									background: white;
+																									transition: background 0.2s ease-in;
+																								}
+																								.pushbutton24.clicked {
+																									background: #AEF53D;
+																								}
+
+																								.pushbutton25 {
+																									width: 100px;
+																									height: 100px;
+																									background: black;
+																									border-radius: 10%;
+																									cursor: pointer;
+																									margin: 10px;
+																									float:left;
+																								}
+																								.pushbutton25:hover {
+																									background: white;
+																									transition: background 0.2s ease-in;
+																								}
+																								.pushbutton25.clicked {
+																									background: #C01FC4;
+																								}
+
+																								.pushbutton26 {
+																									width: 100px;
+																									height: 100px;
+																									background: black;
+																									border-radius: 10%;
+																									cursor: pointer;
+																									margin: 10px;
+																									float:left;
+																								}
+																								.pushbutton26:hover {
+																									background: white;
+																									transition: background 0.2s ease-in;
+																								}
+																								.pushbutton26.clicked {
+																									background: #E0D8B8;
+																								}
+
+
+																								.box input[type = "text"], box input[type = "text1"]{
+																									border: 0;
+																									background: black;
+																									display: block;
+																									margin: 20px auto;
+																									text-align: left;
+																									border: 2px solid black;
+																									padding: 14px 10px;
+																									width: 1000px;
+																									outline: none;
+																									color: white;
+																									border-radius:  24px;
+																									transition: 0.25s
+
+																								}
+
+																								p {
+																									color: black;
+																									font-size: 50px;
+																									text-align: center;
+																								}
+
+																								div{
+																									height: 5000px;
+																								}
+
+</style>
+</head>
+<body>
+
+<a href="#" onmousedown="bleep.play()">
+<div class="pushbutton"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep = new Audio();
+  bleep.src = "1.wav";
+</script>
+
+
+<a href="#" onmousedown="bleep2.play()">
+<div class="pushbutton2"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton2").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep2 = new Audio();
+  bleep2.src = "2.wav";
+</script>
+
+
+<a href="#" onmousedown="bleep3.play()">
+<div class="pushbutton3"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton3").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep3 = new Audio();
+  bleep3.src = "3.wav";
+</script>
+
+
+<a href="#" onmousedown="bleep4.play()">
+<div class="pushbutton4"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton4").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep4 = new Audio();
+  bleep4.src = "4.wav";
+</script>
+
+
+<a href="#" onmousedown="bleep5.play()">
+<div class="pushbutton5"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton5").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep5 = new Audio();
+  bleep5.src = "5.wav";
+</script>
+
+
+<a href="#" onmousedown="bleep6.play()">
+<div class="pushbutton6"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton6").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep6 = new Audio();
+  bleep6.src = "6.wav";
+</script>
+
+
+<a href="#" onmousedown="bleep7.play()">
+<div class="pushbutton7"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton7").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep7 = new Audio();
+  bleep7.src = "7.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep8.play()">
+<div class="pushbutton8"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton8").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep8 = new Audio();
+  bleep8.src = "8.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep9.play()">
+<div class="pushbutton9"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton9").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep9 = new Audio();
+  bleep9.src = "9.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep10.play()">
+<div class="pushbutton10"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton10").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep10 = new Audio();
+  bleep10.src = "10.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep11.play()">
+<div class="pushbutton11"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton11").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep11 = new Audio();
+  bleep11.src = "11.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep12.play()">
+<div class="pushbutton12"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton12").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep12 = new Audio();
+  bleep12.src = "12.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep13.play()">
+<div class="pushbutton13"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton13").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep13 = new Audio();
+  bleep13.src = "13.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep14.play()">
+<div class="pushbutton14"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton14").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep14 = new Audio();
+  bleep14.src = "14.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep15.play()">
+<div class="pushbutton15"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton15").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep15 = new Audio();
+  bleep15.src = "15.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep16.play()">
+<div class="pushbutton16"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton16").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep16 = new Audio();
+  bleep16.src = "16.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep17.play()">
+<div class="pushbutton17"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton17").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep17 = new Audio();
+  bleep17.src = "17.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep18.play()">
+<div class="pushbutton18"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton18").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep18 = new Audio();
+  bleep18.src = "18.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep19.play()">
+<div class="pushbutton19"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton19").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep19 = new Audio();
+  bleep19.src = "19.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep20.play()">
+<div class="pushbutton20"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton20").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep20 = new Audio();
+  bleep20.src = "20.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep21.play()">
+<div class="pushbutton21"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton21").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep21 = new Audio();
+  bleep21.src = "21.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep22.play()">
+<div class="pushbutton22"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton22").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep22 = new Audio();
+  bleep22.src = "22.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep23.play()">
+<div class="pushbutton23"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton23").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep23 = new Audio();
+  bleep23.src = "23.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep24.play()">
+<div class="pushbutton24"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton24").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep24 = new Audio();
+  bleep24.src = "24.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep25.play()">
+<div class="pushbutton25"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton25").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep25 = new Audio();
+  bleep25.src = "25.mp3";
+</script>
+
+
+<a href="#" onmousedown="bleep26.play()">
+<div class="pushbutton26"></div>
+</a>
+
+<script type="text/javascript">
+	$(".pushbutton26").click(function(){
+		$(this).toggleClass("clicked");
+	});
+  var bleep26 = new Audio();
+  bleep26.src = "26.mp3";
+</script>
+
+
+<form class="box">
+<input type="text" name="" placeholder="text1">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text2">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text3">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text4">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text5">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text6">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text7">
+</form>
+
+<form class="box">
+<input type="text" name="" placeholder="text8">
+</form>
+
+
+<div>
+<a href="./second page.html"><p>You wanna know answer</p><a>
+</div>
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

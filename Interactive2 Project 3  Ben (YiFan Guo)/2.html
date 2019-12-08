@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Typewriter Effect</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+.button5{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:white;
+  font-size: 20px;
+  position: relative;
+  top:-100px;
+
+}
+
+.button6{
+  padding: 0;
+  margin: 0;
+  height: 80vh;
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:white;
+  font-size: 20px;
+  position: relative;
+  top:-30px;
+  left:40px;
+
+
+}
+
+
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Global */
+html {
+      min-height: 200%;
+      overflow: hidden;
+}
+
+body {
+      height: calc(100vh - 8em);
+      padding: 4em;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: sans-serif;
+      background-color: black;
+}
+
+.line {
+      position: relative;
+      top: 30%;
+      width: 16em;
+      margin: 0 auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      font-size: 1000%;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;transform: translateY(-50%);
+}
+
+/*Animation*/
+
+.anim-typewriter {
+      animation: typewriter 4s steps(40) 1s 1 normal both,
+      blinkTextCursor 500ms steps(40) infinite normal;
+      color:green;
+}
+
+.anim-typewriter1 {
+      animation: typewriter 4s steps(40) 1s 1 normal both,
+      blinkTextCursor 500ms steps(40) infinite normal;
+      color:Purple;
+}
+
+
+
+@keyframes typewriter {
+      from {
+            width: 0;
+      }
+      to {
+            width: 6em;
+      }
+}
+
+@keyframes blinkTextCursor {
+      from {
+            border-right-color: rgba(255, 255, 255, 0.75);
+      }
+      to {
+            border-right-color: transparent;
+      }
+}
+
+
+
+
+
+
+
+
+</style>
+<body>
+
+<p class="line anim-typewriter">Reality</p>
+<p class="line anim-typewriter1"> Virtuality</p>
+
+
+
+<a href="./3.html"><div class="button6">
+Page3
+<div></a>
+
+
+
+</body>
+</html>

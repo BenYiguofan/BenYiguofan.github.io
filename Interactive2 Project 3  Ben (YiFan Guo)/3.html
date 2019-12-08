@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Shared</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+  padding: 0;
+
+  height: 100vh;
+  position: relative;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.cool1{
+  position: absolute;
+  font-size: 15px;
+  font: sans-serif;
+}
+
+.button2{
+
+  color:white;
+  font-size: 20px;
+  position: relative;
+  top:900px;
+
+}
+
+.button3{
+  color:white;
+  font-size: 20px;
+  position: relative;
+
+}
+
+
+
+
+</style>
+
+<body>
+
+
+  <div class="cool1">
+  "Reality is merely an illusion,
+  albeit a very persistent one."
+  ― Albert Einstein
+
+  </div>
+
+  <a href="./4.html"><div class="button2">
+  Page4
+  <div></a>
+
+
+<!-- partial:index.partial.html -->
+
+<!-- partial -->
+  <script src='https://codepen.io/Gthibaud/pen/XWWBzaP.js'></script><script  src="./script.js"></script>
+
+<script>
+let app = new Tagada();
+let shapes = [];
+let $ = app.ctx;
+
+class Point {
+  constructor(x, y) {
+    this.position = new Vector(x, y);
+    this.old_position = new Vector(x, y);
+    this.pinned = false;
+  }
+  set(x,y){
+    this.position = new Vector(x, y);
+    this.old_position = new Vector(x, y);
+  }
+  draw() {
+    $.fillStyle = "white";
+    $.beginPath();
+    $.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2);
+    $.fill();
+    $.closePath();
+  }
+}
+
+class Link {
+  constructor(p0, p1) {
+    this.p0 = p0;
+    this.p1 = p1;
+    this.length = p0.position.dist(p1.position);
+  }
+}
+
+
+class Shape {
+  constructor(start, end, corner, attraction) {
+    this.points = [];
+    this.links = [];
+    this.corner = corner;
+    this.attraction = attraction;
+    this.start = start.p;
+    this.start_offset = start.offset;
+    this.end = end.p;
+    this.end_offset = end.offset;
+    this.resolution = Util.clamp(Math.floor(Math.max(app.W,app.H)/100),4,14);
+    let a = this.start.angle(this.end),
+      d = this.start.dist(this.end);
+    for (let i = 0; i < this.resolution; i++) {
+      let p_p = new Vector().fromAngle(a);
+      p_p.setMag(
+        Util.map(i, 0, this.resolution - 1, 0, d)
+      );
+      p_p.add(this.start);
+      this.points.push(new Point(p_p.x, p_p.y));
+    }
+    this.points[0].pinned = true;
+    this.points[this.points.length-1].pinned = true;
+    for (var i = 1; i < this.points.length; i++) {
+      let p_0 = this.points[i-1],
+          p_1 = this.points[i];
+      let l = new Link(p_0,p_1);
+      l.length *= 1.4;
+      this.links.push(l);
+    }
+  }
+  update(dt) {
+    // edges
+    let s = this.points[0].position;
+    s.x = this.start.x + Math.cos(app.frame*0.02) * this.start_offset.x;
+    s.y = this.start.y + Math.sin(app.frame*0.02) * this.start_offset.y;
+
+    let e = this.points[this.points.length-1].position;
+    e.x = this.end.x + Math.cos(app.frame*0.02) * this.end_offset.x;
+    e.y = this.end.y + Math.sin(app.frame*0.02) * this.end_offset.y;
+
+    this.points.forEach(p => {
+      if (p.pinned) return;
+      let velocity = p.position.copy();
+      velocity.sub(p.old_position);
+      velocity.mult(0.98);
+      p.old_position = p.position.copy();
+      p.position.add(velocity);
+      let a = p.position.angle(this.attraction);
+
+      let g = new Vector().fromAngle(a);
+      g.setMag(0.2);
+      p.position.add(g);
+      // mouse
+      let d_m = app.mouse.dist(p.position);
+      let min_dist = Math.min(app.W,app.H)*0.3;
+      if(d_m < min_dist){
+        let a = app.mouse.angle(p.position);
+        let f = new Vector().fromAngle(a);
+        f.setMag(Util.map(d_m,0,min_dist,1,0));
+        p.position.add(f);
+      }
+    });
+
+    this.links.forEach(link => {
+      let distance = link.p0.position.dist(link.p1.position),
+        difference = link.length - distance,
+        percent = difference / distance / 2;
+      let offset = new Vector(
+        (link.p1.position.x - link.p0.position.x) * percent,
+        (link.p1.position.y - link.p0.position.y) * percent
+      );
+      if (!link.p0.pinned) {
+        link.p0.position.sub(offset);
+      }
+      if (!link.p1.pinned) {
+        link.p1.position.add(offset);
+      }
+    });
+
+  }
+  draw() {
+
+    $.beginPath();
+    let points = this.points.map(p=>{
+      return p.position
+    });
+    smooth(points);
+    $.lineTo(this.corner.x,this.corner.y);
+    $.closePath();
+
+  }
+}
+
+app.update = function(dt) {
+  shapes.forEach(s=>{
+    s.update();
+  });
+}
+
+app.render = function() {
+  let $ = this.ctx;
+
+  $.globalCompositeOperation = "xor";
+  shapes.forEach(s=>{
+    $.fillStyle = "#ff350";
+    s.draw();
+    $.fill();
+  });
+
+  $.globalCompositeOperation = "destination-over";
+  shapes.forEach(s=>{
+    $.fillStyle = s.color;
+    s.draw();
+    $.lineWidth = 20;
+    $.fill();
+  });
+  $.globalCompositeOperation = "source-over";
+
+}
+
+function populate(){
+  shapes = [];
+  let s1 =   new Shape(
+      {p:new Vector(0, app.H * 0.4),offset:{x:0,y:-30}},
+      {p:new Vector(app.W * 0.6, app.H),offset:{x:40,y:0}},
+      new Vector(0,app.H),
+      new Vector(app.W,0),
+    );
+    s1.color = "green";
+  shapes.push(s1);
+  let s2 =   new Shape(
+      {p:new Vector(app.W * 0.4,0 ),offset:{x:-60,y:0}},
+      {p:new Vector(app.W, app.H * 0.8),offset:{x:0,y:20}},
+      new Vector(app.W,0),
+      new Vector(0,app.H),
+    );
+    s2.color = "Purple";
+  shapes.push(s2);
+}
+
+
+function smooth(points) {
+  $.moveTo(points[0].x, points[0].y);
+  for (i = 1; i < points.length - 2; i++) {
+    var xc = (points[i].x + points[i + 1].x) / 2;
+    var yc = (points[i].y + points[i + 1].y) / 2;
+    $.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+  }
+
+  $.quadraticCurveTo(
+    points[i].x,
+    points[i].y,
+    points[i + 1].x,
+    points[i + 1].y
+  );
+}
+
+app.resize = function(old_W,old_H){
+  populate();
+}
+
+app.setSize();
+populate();
+app.backgroundColor = "black";
+app.run();
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
